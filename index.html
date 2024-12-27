@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Care</title>
+    <style type="text/css">
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(360deg, skyblue, lightpink);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header with background video */
+        header {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(223, 77, 201, 0.2), rgba(167, 214, 243, 0.2)), url(public/images/2nd.png);
+            background-size: cover;
+
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(255, 182, 193, 0.2); Soft pink overlay */
+        }
+
+        header .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        header .content h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        header .content p {
+            font-size: 1.2em;
+        }
+
+        /* Section styles */
+        section {
+            display: flex;
+            padding: 40px;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Content area styles */
+        .content-area {
+            width: 40%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: justify;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .content-area h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #d94b87;
+            /* Pink color */
+        }
+
+        /* Cards Navigation styles */
+        .cardsnav {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            flex-grow: 1;
+        }
+
+        .cards {
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Card Header styles */
+        .card.header {
+            height: 40px;
+            background-color: #7164b4;
+            /* Pink background */
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card.header h3 {
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            margin: 0;
+        }
+
+        /* Card Body styles */
+        .card.body {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+        }
+
+        .card.body img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Card Footer styles */
+        .card.footer {
+            height: 40px;
+            background-color: #f1f1f1;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer styling */
+        footer {
+            background: linear-gradient(180deg, rgb(164, 215, 235), lightpink);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+            display: grid;
+            grid-template-columns: 6fr 2fr 2fr 2fr;
+            padding-top: 100px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+
+        }
+
+        .the {
+            margin-left: 200px;
+            font-size: 70px;
+            line-height: 55px;
+        }
+
+        .show {
+            margin-left: 90px;
+        }
+
+        .icons {
+            margin-left: 200px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            word-spacing: 10px;
+
+
+        }
+
+        .sub {
+            font-size: 15px;
+            line-height: 40px;
+            margin-top: 70px;
+        }
+
+        .icoko {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .koen {
+            margin-top: 100px;
+            padding-top: 50px;
+            height: auto;
+            padding-right: 100px;
+        }
+
+        .copy {
+            margin-top: 50px;
+            margin-left: 200px;
+            font-weight: lighter;
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        a:hover {
+            color: goldenrod;
+
+        }
+
+        /* Smooth scrolling for cards */
+        .cardsnav {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with Background Video -->
+    <header>
+        <!-- Replace with a suitable video URL related to beauty and de-aging -->
+        <!-- <video autoplay loop muted>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Glow Naturally</h1>
+            <p>Your path to radiant, healthy skin starts here.</p>
+        </div>
+    </header>
+
+    <section>
+        <!-- Left Content Section -->
+        <div class="content-area">
+            <h2>Our Skincare Products</h2>
+            <p>Discover our range of skincare products designed to hydrate, rejuvenate, and enhance your skin’s natural
+                glow. Our products are made from high-quality ingredients that provide real results, especially for
+                anti-aging and de-aging benefits.</p>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="cardsnav" id="cardContainer">
+            <div class="cards">
+                <div class="card header">
+                    <h3>Moisturizer</h3>
+                </div>
+                <div class="card body">
+                    <img src="https://via.placeholder.com/250x150.png?text=Moisturizer" alt="Moisturizer">
+                </div>
+                <div class="card footer">
+                    <button onclick="alert('Moisturizer clicked!')">Learn More</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card header">
+                    <h3>Serum</h3>
+                </div>
+                <div class="card body">
+                    <img src="https://via.placeholder.com/250x150.png?text=Serum" alt="Serum">
+                </div>
+                <div class="card footer">
+                    <button onclick="alert('Serum clicked!')">Learn More</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card header">
+                    <h3>Face Mask</h3>
+                </div>
+                <div class="card body">
+                    <img src="https://via.placeholder.com/250x150.png?text=Face+Mask" alt="Face Mask">
+                </div>
+                <div class="card footer">
+                    <button onclick="alert('Face Mask clicked!')">Learn More</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card header">
+                    <h3>Sunscreen</h3>
+                </div>
+                <div class="card body">
+                    <img src="https://via.placeholder.com/250x150.png?text=Sunscreen" alt="Sunscreen">
+                </div>
+                <div class="card footer">
+                    <button onclick="alert('Sunscreen clicked!')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- footer -->
+        <footer>
+            <!-- title -->
+            <div class="the">
+                <a href=""><span>THE </span><br>
+                    <span class="show">SHOW</span><BR>
+                    <span>MUST</span><br>
+                    <span>GO ON</span><br>
+                </a>
+
+            </div>
+            <!-- subtitle -->
+            <div class="sub">
+                <a href="">
+                    <li>Skin Care</li>
+                </a>
+                <a href="">
+                    <li>Makeup</li>
+                </a>
+                <a href="">
+                    <li>Products</li>
+                </a>
+                <a href="">
+                    <li>About</li>
+                </a>
+
+
+            </div>
+            <div class="sub">
+                <a href="">
+                    <li>Reviews</li>
+                </a>
+                <a href="">
+                    <li>Shop</li>
+                </a>
+                <a href="">
+                    <li>Contact</li>
+                </a>
+
+            </div>
+            <div class="sub">
+
+                <a href="">
+                    <li>Skin Genius</li>
+                </a>
+                <a href="">
+                    <li>Beauty Magazine</li>
+                </a>
+                <a href="">
+                    <li>Factory tours</li>
+                </a>
+
+            </div>
+
+            <div class="icoko">
+                <div class="icons">
+                    <a href=""><span class="bi bi-instagram"></span> </a>
+                    <a href=""> <span class="bi bi-twitter"></span></a>
+                    <a href=""> <span class="bi bi-facebook"></span></a>
+                    <a href=""><span class="bi bi-youtube"></span></a>
+
+
+
+                </div>
+
+            </div>
+
+        </footer>
+        <div class="copy"> <span>Copyright © since 2024 –
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><a href="">sitemap </a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><a href="">cookies policy </a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>legal links</span>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling on button click
+        document.querySelectorAll('.card button').forEach(button => {
+            button.addEventListener('click', function () {
+                alert("Card clicked!");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

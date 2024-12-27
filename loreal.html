@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Oréal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #eb80a3;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 0.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            background: #e91e63;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: white;
+        }
+        .product h2 {
+            color: #e91e63;
+        }
+        .product p {
+            margin: 0.5rem 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: white;
+            background: #e91e63;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #c2185b;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to L'Oréal</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product">
+                <h2>Skincare</h2>
+                <p>Explore our range of moisturizers and anti-aging products.</p>
+                <button class="btn" onclick="showMore('Skincare')">Learn More</button>
+            </div>
+            <div class="product">
+                <h2>Haircare</h2>
+                <p>Discover shampoos, conditioners, and hair dye from L'Oréal.</p>
+                <button class="btn" onclick="showMore('Haircare')">Learn More</button>
+            </div>
+            <div class="product">
+                <h2>Makeup</h2>
+                <p>Enhance your beauty with our premium makeup products.</p>
+                <button class="btn" onclick="showMore('Makeup')">Learn More</button>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 L'Oréal. All rights reserved.</p>
+    </footer>
+    <script>
+        function showMore(product) {
+            alert(`Discover more about ${product}!`);
+        }
+    </script>
+</body>
+</html>
